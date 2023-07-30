@@ -1,33 +1,42 @@
 <x-app-layout>
     <div class="bg-white rounded-lg shadow-lg mx-10 my-10">
-        <form class="p-10 space-y-4" method="POST" action="{{ route('create') }}">
+        <form class="p-10 space-y-4" method="POST" action="{{ route('Appointment.store') }}" enctype="multipart/form-data">
             @csrf
 
-            <div class="flex space-x-4">
-                <!-- nom -->
-                <div class="w-full">
-                    <x-input-label for="nom" :value="__('Nom')" />
-                    <x-text-input id="nom" class="block mt-1 w-full" type="text" name="nom" :value="old('nom')" required autofocus autocomplete="nom" />
-                    <x-input-error :messages="$errors->get('nom')" class="mt-2" />
-                </div>
-                <!-- prenom -->
-                <div class="w-full">
-                    <x-input-label for="prenom" :value="__('Prénom')" />
-                    <x-text-input id="prenom" class="block mt-1 w-full" type="text" name="prenom" :value="old('prenom')" required autofocus autocomplete="prenom" />
-                    <x-input-error :messages="$errors->get('prenom')" class="mt-2" />
-                </div>
+            <!-- prenom -->
+            <div class="w-full">
+                <x-input-label for="title" :value="__('Nom et prénom')" />
+                <x-text-input id="title" class="block mt-1 w-full" type="text" name="title" :value="old('title')" required autofocus autocomplete="title" />
+                <x-input-error :messages="$errors->get('title')" class="mt-2" />
             </div>
+            
             <!-- Probleme -->
             <div>
-                <x-input-label for="problem" :value="__('problem')" />
-                <x-text-input id="problem" class="block mt-1 w-full" type="text" name="problem" :value="old('problem')" required autofocus autocomplete="problem" />
-                <x-input-error :messages="$errors->get('problem')" class="mt-2" />
+                <x-input-label for="description" :value="__('Probleme')" />
+                <x-text-input id="description" class="block mt-1 w-full" type="text" name="description" :value="old('description')" required autofocus autocomplete="description" />
+                <x-input-error :messages="$errors->get('description')" class="mt-2" />
+            </div>
+            <div class="flex space-x-4">
+                <!--Date-->
+                <div>
+                    <x-input-label for="date" :value="__('Date')"/>
+                    <input type="date" id="date" name="date" class="mt-2">
+                </div>
+                <!--Time-->
+                <div>
+                    <x-input-label for="heure" :value="__('Heure')"/>
+                    <input type="time" id="heure" name="heure" class="mt-2">
+                </div>
             </div>
 
-
+            <div>
+                <x-input-label for="adresse" :value="__('Adresse')" />
+                <x-text-input id="adresse" class="block mt-1 w-full" type="text" name="adresse" :value="old('adresse')" required autofocus autocomplete="adresse" />
+                <x-input-error :messages="$errors->get('adresse')" class="mt-2" />
+            </div>
 
             <x-primary-button class="mt-6">
-                {{ __('Register') }}
+                {{ __('Prendre rendez-vous') }}
             </x-primary-button>
         </form>
     </div>

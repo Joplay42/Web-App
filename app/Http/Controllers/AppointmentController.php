@@ -21,7 +21,7 @@ class AppointmentController extends Controller
      */
     public function create()
     {
-        //
+        return view('create');
     }
 
     /**
@@ -29,7 +29,15 @@ class AppointmentController extends Controller
      */
     public function store(StoreAppointmentRequest $request)
     {
-        //
+        $appointment = Appointment::create([
+            'title' => $request->title,
+            'description' => $request->description,
+            'date' => $request->date,
+            'heure' => $request->heure,
+            'adresse' => $request->adresse,
+        ]);
+
+        return view('create');
     }
 
     /**
