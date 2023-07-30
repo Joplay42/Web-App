@@ -18,14 +18,12 @@
     <body class="font-sans bg-blue">
         <div class="lg:grid lg:grid-cols-2 items-center relative">
             <div class="min-h-screen bg-white"> <!-- Updated class: flex-col -->
-                <a href="/" class="">
-                    <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-                </a>
-                <div class="max-w-lg mx-auto mt-40">
-                    <div class="text-center">
-                        <h1 class=" font-bold">Sign-up</h1>
-                        <p class="mb-10">Commencer dès maintenant a prendre un rendez-vous!</p>
+                <a href="/">
+                    <div class="mt-10 ml-10">
+                        <x-application-logo class="w-20 h-20 text-gray-500" />
                     </div>
+                </a>
+                <div class="max-w-lg mx-auto mt-20">
                     <div class="px-6 py-4 bg-white shadow-xl overflow-hidden sm:rounded-lg">
                         {{ $slot }}
                     </div>

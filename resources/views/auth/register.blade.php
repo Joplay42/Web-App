@@ -1,4 +1,9 @@
 <x-guest-layout>
+
+    <div class="text-center">
+        <h1 class=" font-bold">Sign-up</h1>
+        <p class="mb-10">Commencer dès maintenant a prendre un rendez-vous!</p>
+    </div>
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
